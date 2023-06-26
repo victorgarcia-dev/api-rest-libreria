@@ -1,21 +1,26 @@
 const{ DataTypes } = require('sequelize')
 const  { sequelize } = require('../config/db.config');
 
-const Library = sequelize.define("library", {
+const Book = sequelize.define("book", {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
     },
-    name: {
-        type: DataTypes.STRING(50),
+    isbn: {
+        type: DataTypes.STRING(150),
+        allowNull: false,
+        unique: true
+    },
+    title: {
+        type: DataTypes.STRING(150),
         allowNull: false
     },
-    location: {
+    author: {
         type: DataTypes.STRING(100),
         allowNull: true
     },
-    phone: {
+    year: {
         type: DataTypes.STRING(15),
         allowNull: true
     },
@@ -29,4 +34,4 @@ const Library = sequelize.define("library", {
     timestamps: true
 });
 
-module.exports = Library;
+module.exports = Book;

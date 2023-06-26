@@ -16,6 +16,7 @@ class Server {
 
         //middleware
         this.middleware();
+
     }
 
     //conexión a la base de datos
